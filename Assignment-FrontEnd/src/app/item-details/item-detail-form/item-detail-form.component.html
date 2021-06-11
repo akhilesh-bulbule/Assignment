@@ -1,0 +1,37 @@
+<form novalidate autocomplete="off" #itemForm="ngForm" (submit)="insertOrUpdateItem(itemForm)">
+    <input type="hidden" name="itemDetailId" [value]="_itemService.formData.itemId"/>
+    <div class="mb-4">
+        <div class="form-group">
+            <label>Item Name </label>
+            <input class="form-control form-control-lg" placeholder="Enter Item Name" name="itemName" #itemName= "ngModel" [(ngModel)]="_itemService.formData.itemName" required
+            [class.invalid]="itemName.invalid && itemName.touched"
+            > 
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Item Description </label>
+        <input class="form-control form-control-lg" placeholder="Enter Item Description" name="description" #description= "ngModel" [(ngModel)]="_itemService.formData.description" required
+        [class.invalid]="description.invalid && description.touched"
+        > 
+    </div>
+    <div class="row  mt-4">
+        <div class="form-group col-md-6">
+            <label>Item Price </label>
+            <input class="form-control form-control-lg" type="number" min="1" placeholder="Enter Item Price" name="itemPrice" #itemPrice= "ngModel" [(ngModel)]="_itemService.formData.itemPrice" required
+            [class.invalid]="itemPrice.invalid && itemPrice.touched"
+            > 
+        </div>
+        <div class="form-group col-md-6">
+            <label>Item Quantity </label>
+            <input class="form-control form-control-lg" type="number" min="1" placeholder="Enter Item Quantity" name="itemQuantity" #itemQuantity= "ngModel" [(ngModel)]="_itemService.formData.itemQuantity" required
+            [class.invalid]="itemQuantity.invalid && itemQuantity.touched"
+            > 
+        </div>
+    
+    </div>
+   
+    <div class="row mt-4">
+       <button class="btn btn-lg btn-block ml-5 mr-5" type="submit" [disabled]="itemForm.invalid" style="background-color: #87CEFA;">SUBMIT</button>
+    </div>
+</form>

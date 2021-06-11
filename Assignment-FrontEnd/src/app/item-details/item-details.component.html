@@ -1,0 +1,36 @@
+<div class="jumbotron mt-3 mb-4 py-3" style="background-color: #DCDCDC;">
+    <h1 class="display-4 text-center">SHOPBRIDGE</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+
+        <item-detail-form>
+        </item-detail-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light" style="background-color: #DCDCDC;">
+                <tr>
+                    <th>Item Name</th>
+                    <th class="text-center">Item Price</th>
+                    <th class="text-center">Item Quantity</th>
+                <th class="text-center"> Total Amount</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of _itemService.itemslist" >
+                    <td>{{item.itemName}}</td>
+                    <td class="text-center">{{item.itemPrice}}</td>
+                    <td class="text-center">{{item.itemQuantity}}</td>
+                    <td class="text-center">{{getTotalAmount(item.itemPrice,item.itemQuantity)}}</td>
+                    <td class="d-flex align-items-center justify-content-around mt-3">
+                        <i class="far fa-edit fa-lg text-info" (click)="editItem(item)"></i>
+                        <i class="far fa-trash-alt fa-lg text-danger ml-4" (click)="deleteCurrentItem(item.itemId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
