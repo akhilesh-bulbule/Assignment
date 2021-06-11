@@ -16,4 +16,12 @@ Here are the steps for you to run the project onto your local machine.
 14. Once all the packages are restored, run the command as "ng serve --o" in your command prompt for running an angular made application for front-end.
 15. Make sure you keep the back-end front-end project running in order to use the application.
 
- 
+ Time Estimate required for developing this Assignment:
+ Setting up of Back-End along with Endpoint API and database CRUD operations: 
+   a. Generating a table design : 30 minutes.
+   b. Adding an app service for performing CRUD operations with creating and testing endpoint API : 1 hour
+   
+  Setting up of Front-End along with generating services and components consuming API: 
+   a. Generating components : 2 hours.
+   b. Generating up with the user interface : 1 hour
+   
